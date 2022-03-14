@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/zomato.jfif</ImageUrl>
+    <NavigateUrl>https://www.zomato.com/india</NavigateUrl>
+    <AlternateText>
+      Order Food Online
+    </AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>foods</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/medicines.jfif</ImageUrl>
+    <NavigateUrl>https://pharmeasy.in/</NavigateUrl>
+    <AlternateText>
+      Order Medicines Online
+    </AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>softdrink</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/motto.jpg</ImageUrl>
+    <NavigateUrl>http://www.homeneedsonline.com/</NavigateUrl>
+    <AlternateText>
+      Stay Home Stay Safe
+    </AlternateText>
+    <Impressions>20</Impressions>
+    <Keyword>house</Keyword>
+  </Ad>
+</Advertisements>

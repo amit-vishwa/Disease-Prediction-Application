@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DiseasePredictorAppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DiseasePredictorAppModelStoreContainer">
+          <EntitySet Name="Diseases" EntityType="DiseasePredictorAppModel.Store.Diseases" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Doctors" EntityType="DiseasePredictorAppModel.Store.Doctors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Visitors" EntityType="DiseasePredictorAppModel.Store.Visitors" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DiseasePredictorApp.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Diseases">
+          <Key>
+            <PropertyRef Name="SrId" />
+          </Key>
+          <Property Name="SrId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Disease" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Symptom1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Symptom2" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Symptom3" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Symptom4" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Symptom5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Symptom6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Symptom7" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Doctors">
+          <Key>
+            <PropertyRef Name="SrId" />
+          </Key>
+          <Property Name="SrId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DPhone" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="DAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Visitors">
+          <Key>
+            <PropertyRef Name="SrId" />
+          </Key>
+          <Property Name="SrId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="VEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="VMessage" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiseasePredictorAppModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DiseasePredictorAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Diseases" EntityType="DiseasePredictorAppModel.Disease" />
+          <EntitySet Name="Doctors" EntityType="DiseasePredictorAppModel.Doctor" />
+          <EntitySet Name="Visitors" EntityType="DiseasePredictorAppModel.Visitor" />
+        </EntityContainer>
+        <EntityType Name="Disease">
+          <Key>
+            <PropertyRef Name="SrId" />
+          </Key>
+          <Property Name="SrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Disease1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom2" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom3" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom4" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom5" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom6" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Symptom7" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="SrId" />
+          </Key>
+          <Property Name="SrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DPhone" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="DAddress" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="SrId" />
+          </Key>
+          <Property Name="SrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="VEmail" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="VMessage" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DiseasePredictorAppModelStoreContainer" CdmEntityContainer="DiseasePredictorAppEntities">
+          <EntitySetMapping Name="Diseases">
+            <EntityTypeMapping TypeName="DiseasePredictorAppModel.Disease">
+              <MappingFragment StoreEntitySet="Diseases">
+                <ScalarProperty Name="SrId" ColumnName="SrId" />
+                <ScalarProperty Name="Disease1" ColumnName="Disease" />
+                <ScalarProperty Name="Symptom1" ColumnName="Symptom1" />
+                <ScalarProperty Name="Symptom2" ColumnName="Symptom2" />
+                <ScalarProperty Name="Symptom3" ColumnName="Symptom3" />
+                <ScalarProperty Name="Symptom4" ColumnName="Symptom4" />
+                <ScalarProperty Name="Symptom5" ColumnName="Symptom5" />
+                <ScalarProperty Name="Symptom6" ColumnName="Symptom6" />
+                <ScalarProperty Name="Symptom7" ColumnName="Symptom7" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="DiseasePredictorAppModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctors">
+                <ScalarProperty Name="SrId" ColumnName="SrId" />
+                <ScalarProperty Name="DName" ColumnName="DName" />
+                <ScalarProperty Name="DPhone" ColumnName="DPhone" />
+                <ScalarProperty Name="DAddress" ColumnName="DAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitors">
+            <EntityTypeMapping TypeName="DiseasePredictorAppModel.Visitor">
+              <MappingFragment StoreEntitySet="Visitors">
+                <ScalarProperty Name="SrId" ColumnName="SrId" />
+                <ScalarProperty Name="VName" ColumnName="VName" />
+                <ScalarProperty Name="VEmail" ColumnName="VEmail" />
+                <ScalarProperty Name="VMessage" ColumnName="VMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="DiseasePredictorAppModel.Disease" Width="1.5" PointX="2.75" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiseasePredictorAppModel.Doctor" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiseasePredictorAppModel.Visitor" Width="1.5" PointX="0.5" PointY="0.75" Height="1.7879850260416657" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

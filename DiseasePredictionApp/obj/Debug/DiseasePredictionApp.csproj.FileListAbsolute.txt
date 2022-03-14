@@ -1,0 +1,5 @@
+C:\Users\amitv\documents\visual studio 2010\Projects\DiseasePredictionApp\DiseasePredictionApp\bin\DiseasePredictionApp.dll
+C:\Users\amitv\documents\visual studio 2010\Projects\DiseasePredictionApp\DiseasePredictionApp\bin\DiseasePredictionApp.pdb
+C:\Users\amitv\documents\visual studio 2010\Projects\DiseasePredictionApp\DiseasePredictionApp\obj\Debug\DiseasePredictionApp.dll
+C:\Users\amitv\documents\visual studio 2010\Projects\DiseasePredictionApp\DiseasePredictionApp\obj\Debug\DiseasePredictionApp.pdb
+C:\Users\amitv\documents\visual studio 2010\Projects\DiseasePredictionApp\DiseasePredictionApp\obj\Debug\DiseasePredictionApp.csprojResolveAssemblyReference.cache

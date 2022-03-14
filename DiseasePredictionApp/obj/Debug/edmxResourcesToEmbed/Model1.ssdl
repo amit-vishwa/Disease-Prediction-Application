@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DiseasePredictorAppModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="DiseasePredictorAppModelStoreContainer">
+    <EntitySet Name="Diseases" EntityType="DiseasePredictorAppModel.Store.Diseases" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Doctors" EntityType="DiseasePredictorAppModel.Store.Doctors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Visitors" EntityType="DiseasePredictorAppModel.Store.Visitors" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'DiseasePredictorApp.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Diseases">
+    <Key>
+      <PropertyRef Name="SrId" />
+    </Key>
+    <Property Name="SrId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Disease" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Symptom1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Symptom2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Symptom3" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Symptom4" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Symptom5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Symptom6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Symptom7" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="SrId" />
+    </Key>
+    <Property Name="SrId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DPhone" Type="numeric" Nullable="false" Precision="10" />
+    <Property Name="DAddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Visitors">
+    <Key>
+      <PropertyRef Name="SrId" />
+    </Key>
+    <Property Name="SrId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="VEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="VMessage" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>
