@@ -1,0 +1,3 @@
+# Historical ASP.NET build output; regenerate locally if using a compatible toolchain.
+**/bin/
+**/obj/
