@@ -29,7 +29,7 @@ This project was an early ASP.NET learning exercise for building a web interface
 - The original committed configuration contained a predictable cleartext administrator credential; it has been removed
 - Debug compilation was enabled and has been disabled in the archival configuration
 - Authentication and authorization do not meet current application-security expectations
-- Generated build artifacts are committed in the historical project tree
+- Generated `bin/` and `obj/` build outputs are excluded from the repository; regenerate them locally with a compatible toolchain
 - The prediction logic must not be interpreted as medical advice
 
 ## Running locally
